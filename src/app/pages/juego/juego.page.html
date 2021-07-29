@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            <h1>Memorama</h1>
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-toolbar>
+        <ion-title>
+            <h2>Tiempo: <strong> {{contador}}</strong> </h2>
+        </ion-title>
+    </ion-toolbar>
+
+    <ion-list>
+
+
+        <ion-grid>
+            <ion-row>
+                <ion-col *ngFor="let item of imagenes1">
+                    <ion-item>
+                        <ion-thumbnail slot="start">
+                            <ion-img *ngIf="!item.cubre" [src]="item.img"></ion-img>
+                            <ion-img *ngIf="item.cubre" [src]="item.imgcubre" (click)="revisaImagen1(item.id)"></ion-img>
+                        </ion-thumbnail>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <ion-row>
+                <ion-col *ngFor="let item of imagenes2">
+                    <ion-item>
+                        <ion-thumbnail slot="start">
+                            <ion-img *ngIf="!item.cubre" [src]="item.img"></ion-img>
+                            <ion-img *ngIf="item.cubre" [src]="item.imgcubre" (click)="revisaImagen2(item.id)"></ion-img>
+                        </ion-thumbnail>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+    </ion-list>
+
+</ion-content>
